@@ -205,16 +205,7 @@ async def tell_joke(interaction: discord.Interaction):
 async def flip_coin(interaction: discord.Interaction):
     result = random.choice(["Heads", "Tails"])
     await interaction.response.send_message(f"🪙 The coin landed on: {result}")
-compliments = [
-    "You're an amazing person!", 
-    "You light up the room!", 
-    "You have a great sense of humor!"
-]
 
-@bot.tree.command(name="compliment", description="Get a random compliment!")
-async def compliment(interaction: discord.Interaction, user: discord.Member = None):
-    target = user.mention if user else "You"
-    await interaction.response.send_message(f"🌟 {target}, {random.choice(compliments)}")
 @bot.tree.command(name="meme", description="Get a random meme!")
 async def meme(interaction: discord.Interaction):
     memes = [
